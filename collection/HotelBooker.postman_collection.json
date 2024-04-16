@@ -1,0 +1,492 @@
+{
+	"info": {
+		"_postman_id": "6e8c3f95-1072-426c-aa41-654bca2dedb1",
+		"name": "HotelBooker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23812492"
+	},
+	"item": [
+		{
+			"name": "Hotels",
+			"item": [
+				{
+					"name": "ListHotels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/hotels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hotels"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/hotels",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"hotels"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Apr 2024 01:13:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Hotels\": [\n        {\n            \"id\": 1,\n            \"name\": \"Hotel Villagio\",\n            \"address\": \"123 Main Street\",\n            \"telephone\": \"1234567891\",\n            \"email\": \"info@hotelvillagio.com\",\n            \"state\": \"California\",\n            \"country\": \"United States\",\n            \"createdAt\": \"2024-04-09T14:40:08.307929\",\n            \"updated_at\": \"2024-04-09T14:40:08.307929\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Hotel Villagio\",\n            \"address\": \"123 Main Street\",\n            \"telephone\": \"1234567891\",\n            \"email\": \"info@hotelvillagio.com\",\n            \"state\": \"California\",\n            \"country\": \"United States\",\n            \"createdAt\": \"2024-04-09T15:00:16.340244\",\n            \"updated_at\": \"2024-04-09T15:00:16.340244\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Hotel Villagio\",\n            \"address\": \"123 Main Street\",\n            \"telephone\": \"1234567891\",\n            \"email\": \"info@hotelvillagio.com\",\n            \"state\": \"California\",\n            \"country\": \"United States\",\n            \"createdAt\": \"2024-04-09T16:26:28.858649\",\n            \"updated_at\": \"2024-04-09T16:26:28.858649\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Hotel Villagio\",\n            \"address\": \"123 Main Street\",\n            \"telephone\": \"1234567891\",\n            \"email\": \"info@hotelvillagio.com\",\n            \"state\": \"California\",\n            \"country\": \"United States\",\n            \"createdAt\": \"2024-04-09T16:32:35.92142\",\n            \"updated_at\": \"2024-04-09T16:32:35.92242\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Hotel Villagio\",\n            \"address\": \"123 Main Street\",\n            \"telephone\": \"1234567891\",\n            \"email\": \"info@hotelvillagio.com\",\n            \"state\": \"California\",\n            \"country\": \"United States\",\n            \"createdAt\": \"2024-04-09T16:36:00.502596\",\n            \"updated_at\": \"2024-04-09T16:36:00.502596\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Hotel Villagio\",\n            \"address\": \"123 Main Street\",\n            \"telephone\": \"1234567891\",\n            \"email\": \"info@hotelvillagio.com\",\n            \"state\": \"California\",\n            \"country\": \"United States\",\n            \"createdAt\": \"2024-04-09T16:36:01.982403\",\n            \"updated_at\": \"2024-04-09T16:36:01.982403\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Hotel Villagio\",\n            \"address\": \"123 Main Street\",\n            \"telephone\": \"1234567891\",\n            \"email\": \"info@hotelvillagio.com\",\n            \"state\": \"California\",\n            \"country\": \"United States\",\n            \"createdAt\": \"2024-04-09T16:36:58.567481\",\n            \"updated_at\": \"2024-04-09T16:36:58.567481\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Hotel Villagio\",\n            \"address\": \"123 Main Street\",\n            \"telephone\": \"1234567891\",\n            \"email\": \"info@hotelvillagio.com\",\n            \"state\": \"California\",\n            \"country\": \"United States\",\n            \"createdAt\": \"2024-04-09T16:37:13.964399\",\n            \"updated_at\": \"2024-04-09T16:37:13.965399\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"Hotel Villagio\",\n            \"address\": \"123 Main Street\",\n            \"telephone\": \"1234567891\",\n            \"email\": \"info@hotelvillagio.com\",\n            \"state\": \"California\",\n            \"country\": \"United States\",\n            \"createdAt\": \"2024-04-09T22:06:36.766764\",\n            \"updated_at\": \"2024-04-09T22:06:36.767761\"\n        }\n    ],\n    \"take\": 50,\n    \"total\": 9,\n    \"pages\": 1,\n    \"page\": 1\n}"
+						},
+						{
+							"name": "200 byId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/hotels/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"hotels",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Apr 2024 01:14:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"name\": \"Hotel Villagio\",\n    \"address\": \"123 Main Street\",\n    \"telephone\": \"1234567891\",\n    \"email\": \"info@hotelvillagio.com\",\n    \"state\": \"California\",\n    \"country\": \"United States\",\n    \"createdAt\": \"2024-04-09T16:32:35.92142\",\n    \"updated_at\": \"2024-04-09T16:32:35.92242\"\n}"
+						}
+					]
+				},
+				{
+					"name": "CreateHotels",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Hotel Villagio\",\r\n    \"address\": \"123 Main Street\",\r\n    \"state\": \"California\",\r\n    \"telephone\": \"1234567891\",\r\n    \"email\": \"info@hotelvillagio.com\",\r\n    \"country\": \"United States\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/hotel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hotel"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Hotel Villagio\",\r\n    \"address\": \"123 Main Street\",\r\n    \"state\": \"California\",\r\n    \"telephone\": \"1234567891\",\r\n    \"email\": \"info@hotelvillagio.com\",\r\n    \"country\": \"United States\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/hotel",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"hotel"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "e54611c0-3e63-4b3f-8f38-a694ef277405",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Apr 2024 17:40:08 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Hotel Villagio\",\n    \"address\": \"123 Main Street\",\n    \"telephone\": \"1234567891\",\n    \"email\": \"info@hotelvillagio.com\",\n    \"state\": \"California\",\n    \"country\": \"United States\",\n    \"createdAt\": \"2024-04-09T14:40:08.307929\",\n    \"updated_at\": \"2024-04-09T14:40:08.307929\"\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteHotel",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/hotels/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hotels",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/hotels/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"hotels",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Apr 2024 01:14:04 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Hotel not found\",\n    \"status\": 404\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteHotel",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/hotels/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hotels",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rooms",
+			"item": [
+				{
+					"name": "ListRoomsByHotel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/hotels/1/rooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hotels",
+								"1",
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createRoom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/hotels/1/rooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hotels",
+								"1",
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRoomById",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRoomById",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reserve",
+			"item": [
+				{
+					"name": "ListReservesFromRoom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/hotels/1/rooms/1/reserve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hotels",
+								"1",
+								"rooms",
+								"1",
+								"reserve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createReserve",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Guilherme\",\r\n    \"telephone\": \"1234567890\",\r\n    \"email\": \"exemplo@email.com\",\r\n    \"checkInDate\": \"2024-04-20\",\r\n    \"checkOutDate\": \"2024-04-22\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/hotels/1/rooms/1/reserve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hotels",
+								"1",
+								"rooms",
+								"1",
+								"reserve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateReserve",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Melani\",\r\n    \"telephone\": \"1234567890\",\r\n    \"email\": \"exemplo@email.com\",\r\n    \"checkInDate\": \"2024-04-24\",\r\n    \"checkOutDate\": \"2024-04-25\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/hotels/1/rooms/2/reserve/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hotels",
+								"1",
+								"rooms",
+								"2",
+								"reserve",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteReserveFromId",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
