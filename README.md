@@ -37,22 +37,22 @@ PORT: 5432
 ```
 ## Hotel Routes
 
-# GET - /hotels
+### GET - /hotels
 Returns all created hotels.
 
-# GET - /hotels/:{id}
+### GET - /hotels/:{id}
 Returns a specific hotel.
 
-# POST - /hotels
+### POST - /hotels
 Creates a hotel.
 
-# DELETE - /hotels/:{id}
+### DELETE - /hotels/:{id}
 Deletes a specific hotel.
 
-# PUT - /hotels/:{id}
+### PUT - /hotels/:{id}
 Updates a specific hotel.
 
-# Parameters
+#### Parameters
 
 - **id**: The unique identifier of the hotel.
 
