@@ -37,44 +37,44 @@ PORT: 5432
 ```
 ## Hotel Routes
 
-## GET - /hotels
+### GET - /hotels
 Returns all created hotels.
 
-## GET - /hotels/:{id}
+### GET - /hotels/:{id}
 Returns a specific hotel.
 
-## POST - /hotels
+### POST - /hotels
 Creates a hotel.
 
-## DELETE - /hotels/:{id}
+### DELETE - /hotels/:{id}
 Deletes a specific hotel.
 
-## PUT - /hotels/:{id}
+### PUT - /hotels/:{id}
 Updates a specific hotel.
 
-## Parameters
+#### Parameters
 
 - **id**: The unique identifier of the hotel.
 
 
 ## Room Routes
 
-## GET - /hotels/{id}/rooms
+### GET - /hotels/{id}/rooms
 Returns all rooms created for the hotel.
 
-## GET - /hotels/:{id}/room/:{roomId}
+### GET - /hotels/:{id}/room/:{roomId}
 Returns a specific room.
 
-## POST - /hotels/:{id}/rooms
+### POST - /hotels/:{id}/rooms
 Creates a room for a hotel.
 
-## DELETE - /hotels/:{id}/rooms/:{roomId}
+### DELETE - /hotels/:{id}/rooms/:{roomId}
 Deletes a specific room.
 
-## PUT - /hotels/:{id}/rooms/:{roomId}
+### PUT - /hotels/:{id}/rooms/:{roomId}
 Updates a specific room.
 
-## Parameters
+#### Parameters
 
 - **id**: The unique identifier of the hotel.
 - **roomId**: The unique identifier of the room.
@@ -82,22 +82,22 @@ Updates a specific room.
 
 
 
-## GET - /hotels/:{id}/rooms/:{roomId}/reserves
+### GET - /hotels/:{id}/rooms/:{roomId}/reserves
 Returns all reserves for a specific room.
 
-## GET - /hotels/:{id}/rooms/:{roomId}/reserves/:{reserveId}
+### GET - /hotels/:{id}/rooms/:{roomId}/reserves/:{reserveId}
 Returns a specific reserve for a room.
 
-## POST - /hotels/:{id}/rooms/:{roomId}/reserves
+### POST - /hotels/:{id}/rooms/:{roomId}/reserves
 Creates a reserve for a specific room.
 
-## DELETE - /hotels/:{id}/rooms/:{roomId}/reserves/:{reserveId}
+### DELETE - /hotels/:{id}/rooms/:{roomId}/reserves/:{reserveId}
 Deletes a specific reserve for a room.
 
-## PUT - /hotels/:{id}/rooms/:{roomId}/reserves/:{reserveId}
+### PUT - /hotels/:{id}/rooms/:{roomId}/reserves/:{reserveId}
 Updates a specific reserve for a room.
 
-## Parameters
+#### Parameters
 
 - **id**: The unique identifier of the hotel.
 - **roomId**: The unique identifier of the room.
