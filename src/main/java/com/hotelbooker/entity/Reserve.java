@@ -10,8 +10,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.List;
+
 
 @Table(name="reserve")
 @Entity(name="reserve")
@@ -69,7 +68,7 @@ public class Reserve {
 
 
     @JoinColumn(name = "hotel_id")
-    @ManyToOne(targetEntity = Hotel.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(targetEntity = Hotel.class, fetch = FetchType.EAGER)
     @JsonIgnoreProperties(value = {"id", "rooms", "createdAt", "updated_at"})
     private Hotel hotel;
 
@@ -82,8 +81,8 @@ public class Reserve {
     }
 
     @JoinColumn(name = "room_id")
-    @ManyToOne(targetEntity = Room.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JsonIgnoreProperties(value = {"id", "createdAt", "updatedAt", "hotel"})
+    @ManyToOne(targetEntity = Room.class, fetch = FetchType.EAGER)
+    @JsonIgnoreProperties(value = {"id", "createdAt", "updatedAt", "hotel", "reserves"})
     private Room room;
 
     public Room getRoom() {

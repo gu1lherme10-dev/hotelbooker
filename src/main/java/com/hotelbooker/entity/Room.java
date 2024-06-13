@@ -13,7 +13,7 @@ import java.util.List;
 
 @Table(name="rooms")
 @Entity(name="rooms")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "createdAt", "updatedAt"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "createdAt", "updatedAt", "hotel"})
 public class Room {
 
     @Id
@@ -64,7 +64,7 @@ public class Room {
     }
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "hotel_id")
     @JsonIgnoreProperties({"rooms", "updated_at", "createdAt", "id"})
     private Hotel hotel;
@@ -104,7 +104,6 @@ public class Room {
     public void setDailyPrice(Float dailyPrice) {
         this.dailyPrice = dailyPrice;
     }
-
 
 
     @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)

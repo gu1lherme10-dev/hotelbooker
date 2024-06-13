@@ -48,14 +48,22 @@ public class RoomsService {
                 .orElseThrow(() -> new EntityNotFoundException("Room not found")));
     }
 
-    public void deleteRoomById(long hotelId, long id) {
+    public void deleteRoomById(long hotelId, long roomId) {
+
         Hotel hotel = hotelRepository.findById(hotelId)
                 .orElseThrow(() -> new EntityNotFoundException("Hotel not found"));
 
-        ValidateHelpers.validateHotel(hotel, id);
+        Room room = roomsRepository.findById(roomId)
+                .orElseThrow(() -> new EntityNotFoundException("Room not found"));
 
-        roomsRepository.deleteById(id);
+        if (!hotel.getRooms().contains(room)) {
+            throw new IllegalArgumentException("Room does not belong to the specified hotel");
+        }
+        hotel.getRooms().remove(room);
+
+        roomsRepository.delete(room);
     }
+
 
     public ResponseEntity<Room> updateRoomById(Integer hotelId, Integer id, Room payload) {
         Hotel hotelActual = hotelRepository.findById((long) hotelId)

@@ -117,9 +117,15 @@ public class ReserveService {
         Room room = roomsRepository.findById((long) roomId)
                 .orElseThrow(() -> new EntityNotFoundException("Room not found"));
 
+        Reserve reserve = reserveRepository.findById((long) id)
+                .orElseThrow(() -> new EntityNotFoundException("Reserve not found"));
+
         ValidateHelpers.validateHotelAndRoom(hotel, room, id);
 
-        reserveRepository.deleteById((long) id);
+        room.getReserves().remove(reserve);
+
+
+        reserveRepository.delete(reserve);
     }
 
     private boolean isRoomUnavailable(Integer roomId, Reserve payload) {

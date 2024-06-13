@@ -102,7 +102,7 @@ public class Hotel {
     }
 
 
-    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("hotel")
     private List<Room> rooms = new ArrayList<>();
     public List<Room> getRooms() {
