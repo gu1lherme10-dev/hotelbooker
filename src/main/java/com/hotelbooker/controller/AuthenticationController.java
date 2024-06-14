@@ -4,6 +4,7 @@ import com.hotelbooker.domain.user.AuthenticationDTO;
 import com.hotelbooker.domain.user.LoginResponseDTO;
 import com.hotelbooker.domain.user.RegisterDTO;
 import com.hotelbooker.entity.User;
+import com.hotelbooker.entity.UserRole;
 import com.hotelbooker.infra.security.TokenService;
 import com.hotelbooker.repository.UserRepository;
 import jakarta.validation.Valid;
@@ -32,9 +33,16 @@ public class AuthenticationController {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
+        // Obter o usuário autenticado
+        User authenticatedUser = (User) auth.getPrincipal();
+
+        // Obter o papel (role) do usuário
+        UserRole userRole = authenticatedUser.getRole();
+
+
         var token = TokenService.generateToken((User) auth.getPrincipal());
 
-        return ResponseEntity.ok(new LoginResponseDTO(token));
+        return ResponseEntity.ok(new LoginResponseDTO(token, userRole));
     }
 
     @PostMapping("/register")
