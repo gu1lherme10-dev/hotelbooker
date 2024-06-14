@@ -6,5 +6,6 @@ CREATE TABLE rooms (
     hotel_id INT,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    image varchar(1000),
     FOREIGN KEY (hotel_id) REFERENCES hotels(id)
 );
