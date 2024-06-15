@@ -26,9 +26,14 @@ public class SecurityConfigurations {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
-
+                        .requestMatchers(HttpMethod.POST, "/hotels").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/hotels/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/hotels/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/hotels/{id}/rooms").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/hotels/{id}/rooms/{roomId}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/hotels/{id}/rooms/{roomId}").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/error").permitAll()
                         .anyRequest().authenticated()
                 )
