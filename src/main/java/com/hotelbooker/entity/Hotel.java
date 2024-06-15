@@ -101,6 +101,15 @@ public class Hotel {
         this.country = country;
     }
 
+    @Column(name="image")
+    private String image;
+    public String getImage() {
+        return this.image;
+    }
+    public void setImage(String image) {
+        this.image = image;
+    }
+
 
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("hotel")

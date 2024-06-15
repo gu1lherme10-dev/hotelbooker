@@ -1,4 +1,6 @@
 package com.hotelbooker.domain.user;
 
-public record LoginResponseDTO(String token) {
+import com.hotelbooker.entity.UserRole;
+
+public record LoginResponseDTO(String token, UserRole role) {
 }

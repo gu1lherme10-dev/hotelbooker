@@ -76,6 +76,16 @@ public class Room {
         this.hotel = hotel;
     }
 
+    @Column(name="image")
+    private String image;
+    public String getImage() {
+        return this.image;
+    }
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+
     @CreationTimestamp
     @Column(name = "createdAt")
     private LocalDateTime createdAt;
