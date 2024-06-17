@@ -110,6 +110,18 @@ public class Hotel {
         this.image = image;
     }
 
+    @ManyToOne()
+    @JoinColumn(name = "owner_id")
+    @JsonIgnoreProperties({"hotels", "id"})
+    private User user;
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
 
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("hotel")
