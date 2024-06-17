@@ -8,5 +8,7 @@ CREATE TABLE hotels (
     country VARCHAR(255) NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    image varchar(1000)
+    owner_id int,
+    image varchar(1000),
+    FOREIGN KEY (owner_id) REFERENCES users(id)
 );
