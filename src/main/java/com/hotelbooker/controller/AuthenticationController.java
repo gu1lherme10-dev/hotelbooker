@@ -38,11 +38,12 @@ public class AuthenticationController {
 
         // Obter o papel (role) do usuário
         UserRole userRole = authenticatedUser.getRole();
+        int idUser = authenticatedUser.getId();
 
 
         var token = TokenService.generateToken((User) auth.getPrincipal());
 
-        return ResponseEntity.ok(new LoginResponseDTO(token, userRole));
+        return ResponseEntity.ok(new LoginResponseDTO(token, userRole, idUser));
     }
 
     @PostMapping("/register")
