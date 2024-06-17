@@ -3,15 +3,12 @@ import com.hotelbooker.entity.Hotel;
 import com.hotelbooker.entity.User;
 import com.hotelbooker.repository.UserRepository;
 import com.hotelbooker.service.HotelService;
-import jakarta.persistence.EntityManager;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
 import java.util.Optional;
 
 
