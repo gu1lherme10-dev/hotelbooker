@@ -1,13 +1,18 @@
 package com.hotelbooker.controller;
 import com.hotelbooker.entity.Hotel;
+import com.hotelbooker.entity.User;
+import com.hotelbooker.repository.UserRepository;
 import com.hotelbooker.service.HotelService;
+import jakarta.persistence.EntityManager;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
+import java.util.Optional;
 
 
 @RestController
@@ -16,9 +21,17 @@ public class HotelController {
     @Autowired
     private HotelService hotelService;
 
+    @Autowired
+    UserRepository userRepository;
 
-    @PostMapping
-    public ResponseEntity<Hotel> saveHotel(@Valid @RequestBody Hotel data){
+    @PostMapping("/{id}")
+    public ResponseEntity<Hotel> saveHotel(@PathVariable int id, @Valid @RequestBody Hotel data){
+
+        Optional<User> userOptional = userRepository.findById(id);
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            data.setUser(user);
+        }
         return hotelService.createHotel(data);
     }
 
