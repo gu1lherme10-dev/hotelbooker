@@ -1,6 +1,5 @@
 package com.hotelbooker.repository;
 
-import com.hotelbooker.entity.Hotel;
 import com.hotelbooker.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
