@@ -10,7 +10,13 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class HotelService {
@@ -47,6 +53,35 @@ public class HotelService {
                 .orElseThrow(() -> new EntityNotFoundException("Hotel not found"));
 
         hotelRepository.deleteById(id);
+    }
+
+    public Map<String, Object> getUserStatistics(long userId) {
+        long totalHotels = hotelRepository.countHotelsByUserId(userId);
+        long totalRooms = hotelRepository.countRoomsByUserId(userId);
+        long totalReservations = hotelRepository.countReservationsByUserId(userId);
+
+        LocalDate fiveMonthsAgo = LocalDate.now().minusMonths(5);
+        List<Object[]> monthsReservations = hotelRepository.countReservationsPerMonth(fiveMonthsAgo);
+
+        Map<String, Object> stats = new HashMap<>();
+        List<Map<String, Long>> monthsReserves = new ArrayList<>();
+
+        for (Object[] result : monthsReservations) {
+            Map<String, Long> monthReservations = new HashMap<>();
+            String month = String.valueOf(result[0]);
+            Long count = (Long) result[1];
+            monthReservations.put(month, count);
+            monthsReserves.add(monthReservations);
+        }
+
+
+        stats.put("monthsReserves", monthsReserves);
+
+        stats.put("totalHotels", totalHotels);
+        stats.put("totalRooms", totalRooms);
+        stats.put("totalReservations", totalReservations);
+
+        return stats;
     }
 
     public ResponseEntity<Hotel> updateHotel(int id, Hotel payload) {
