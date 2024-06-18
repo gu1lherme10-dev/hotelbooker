@@ -55,6 +55,7 @@ public class HotelService {
         payload.setId(id);
         payload.setCreatedAt(hotelActual.getCreatedAt());
         payload.setUpdated_at(LocalDateTime.now());
+        payload.setUser(hotelActual.getUser());
         return ResponseEntity.ok(hotelRepository.save(payload));
     }
 }
