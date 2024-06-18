@@ -10,7 +10,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
 
 @Service
@@ -29,6 +28,14 @@ public class HotelService {
         Page<Hotel> hotelsPage = hotelRepository.findAll(paginationRequested);
         return ResponseEntity.ok(ResponseHelpers.formatListResponse(hotelsPage));
     }
+
+    public ResponseEntity<?> listHotelsByIdUser(Long userId, int page, int size) {
+        Sort sortByID = Sort.by(Sort.Direction.ASC, "id");
+        PageRequest paginationRequested = PageRequest.of(page - 1, size, sortByID);
+        Page<Hotel> hotels = hotelRepository.findByUserId(userId, paginationRequested);
+        return ResponseEntity.ok(ResponseHelpers.formatListResponse(hotels));
+    }
+
 
     public ResponseEntity<Hotel> findHotelById(long id){
         return ResponseEntity.ok(hotelRepository.findById(id)

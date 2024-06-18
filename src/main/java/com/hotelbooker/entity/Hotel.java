@@ -112,7 +112,7 @@ public class Hotel {
 
     @ManyToOne()
     @JoinColumn(name = "owner_id")
-    @JsonIgnoreProperties({"hotels", "id"})
+    @JsonIgnoreProperties({"user", "login", "password", "authorities", "role", "enabled", "username", "accountNonExpired", "credentialsNonExpired", "accountNonLocked"})
     private User user;
     public User getUser() {
         return user;

@@ -32,6 +32,11 @@ public class HotelController {
         return hotelService.createHotel(data);
     }
 
+    @GetMapping("/userId/{id}")
+    public ResponseEntity<?> listHotelsByIdUser(@RequestParam(required = false, defaultValue = "1") int page, @RequestParam(required = false, defaultValue = "50") int size, @PathVariable long id){
+        return hotelService.listHotelsByIdUser(id, page, size);
+    }
+
     @GetMapping
     public ResponseEntity<?> listHotels(@RequestParam(required = false, defaultValue = "1") int page, @RequestParam(required = false, defaultValue = "50") int size){
         return hotelService.listHotels(page, size);
