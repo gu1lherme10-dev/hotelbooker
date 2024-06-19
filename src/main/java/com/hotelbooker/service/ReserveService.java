@@ -75,6 +75,7 @@ public class ReserveService {
         data.setUpdatedAt(LocalDateTime.now());
         data.setRoom(reserveActual.getRoom());
         data.setHotel(reserveActual.getHotel());
+        data.setUser(reserveActual.getUser());
         Reserve response = reserveRepository.save(data);
 
         return ResponseEntity.ok().body(response);
@@ -92,6 +93,13 @@ public class ReserveService {
         Sort sortByID = Sort.by(Sort.Direction.ASC, "id");
         PageRequest paginationRequested = PageRequest.of(page - 1, size, sortByID);
         Page<Reserve> reservesPage = reserveRepository.findByRoomId(roomId, paginationRequested);
+        return ResponseEntity.ok().body(ResponseHelpers.formatListResponse(reservesPage));
+    }
+
+    public ResponseEntity<?> listReservesByUser(Integer userId, int page, int size) {
+                Sort sortByID = Sort.by(Sort.Direction.ASC, "id");
+        PageRequest paginationRequested = PageRequest.of(page - 1, size, sortByID);
+        Page<Reserve> reservesPage = reserveRepository.findByUserId(userId, paginationRequested);
         return ResponseEntity.ok().body(ResponseHelpers.formatListResponse(reservesPage));
     }
 

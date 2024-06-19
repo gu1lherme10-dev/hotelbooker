@@ -69,7 +69,7 @@ public class Reserve {
 
     @JoinColumn(name = "hotel_id")
     @ManyToOne(targetEntity = Hotel.class, fetch = FetchType.EAGER)
-    @JsonIgnoreProperties(value = {"id", "rooms", "createdAt", "updated_at"})
+    @JsonIgnoreProperties(value = {"rooms", "createdAt", "updated_at"})
     private Hotel hotel;
 
     public Hotel getHotel() {
@@ -82,7 +82,7 @@ public class Reserve {
 
     @JoinColumn(name = "room_id")
     @ManyToOne(targetEntity = Room.class, fetch = FetchType.EAGER)
-    @JsonIgnoreProperties(value = {"id", "createdAt", "updatedAt", "hotel", "reserves"})
+    @JsonIgnoreProperties(value = {"createdAt", "updatedAt", "hotel", "reserves"})
     private Room room;
 
     public Room getRoom() {
@@ -113,6 +113,18 @@ public class Reserve {
     }
     public void setCheckOutDate(LocalDate checkOutDate) {
         this.checkOutDate = checkOutDate;
+    }
+
+    @ManyToOne()
+    @JoinColumn(name = "user_id")
+    @JsonIgnoreProperties({"user", "login", "password", "authorities", "role", "enabled", "username", "accountNonExpired", "credentialsNonExpired", "accountNonLocked"})
+    private User user;
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @CreationTimestamp

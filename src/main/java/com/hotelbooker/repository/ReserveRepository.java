@@ -19,4 +19,6 @@ public interface ReserveRepository extends JpaRepository <Reserve, Long> {
     boolean isRoomUnavailable(Integer roomId, LocalDate checkIn, LocalDate checkOut);
 
     Page<Reserve> findByRoomId(Integer roomId, Pageable pageable);
+
+    Page<Reserve> findByUserId(Integer userId, Pageable pageable);
 }
